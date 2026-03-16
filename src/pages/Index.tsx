@@ -11,6 +11,7 @@ import ClientsSection from "@/components/ClientsSection";
 import ContactSection from "@/components/ContactSection";
 import AreaSection from "@/components/AreaSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <ContactSection />
         <AreaSection />
         <Footer />
+        <WhatsAppButton />
       </div>
     </SmoothScroll>
   );
