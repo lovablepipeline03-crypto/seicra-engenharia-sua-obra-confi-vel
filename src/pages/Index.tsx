@@ -29,6 +29,7 @@ const Index = () => {
         <ContactSection />
         <AreaSection />
         <Footer />
+        <WhatsAppButton />
       </div>
     </SmoothScroll>
   );
