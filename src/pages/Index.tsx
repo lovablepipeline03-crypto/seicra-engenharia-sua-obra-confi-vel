@@ -1,3 +1,4 @@
+import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -12,19 +13,21 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <Hero />
-      <ServicesSection />
-      <DifferentialsSection />
-      <ProjectsSection />
-      <ProcessSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <AreaSection />
-      <Footer />
-    </div>
+    <SmoothScroll>
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <Hero />
+        <ServicesSection />
+        <DifferentialsSection />
+        <ProjectsSection />
+        <ProcessSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <AreaSection />
+        <Footer />
+      </div>
+    </SmoothScroll>
   );
 };
 

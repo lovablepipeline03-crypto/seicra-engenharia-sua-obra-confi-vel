@@ -12,6 +12,16 @@ const serviceOptions = [
   "Outro",
 ];
 
+const fadeLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+};
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,15 +38,15 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contato" className="section-padding bg-foreground text-primary-foreground">
+    <section id="contato" className="section-padding bg-foreground text-primary-foreground relative overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left info */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.6 }}
           >
             <span className="text-sm font-semibold text-accent tracking-widest uppercase">Solicite seu Orçamento</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-3 text-primary-foreground">
@@ -48,7 +58,13 @@ const ContactSection = () => {
             </p>
 
             <div className="mt-10 space-y-6">
-              <div className="flex items-center gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="flex items-center gap-4"
+              >
                 <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-sm">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
@@ -56,8 +72,14 @@ const ContactSection = () => {
                   <p className="text-sm text-primary-foreground/50">Telefone / WhatsApp</p>
                   <p className="font-semibold text-primary-foreground">(19) 99999-9999</p>
                 </div>
-              </div>
-              <div className="flex items-center gap-4">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45 }}
+                className="flex items-center gap-4"
+              >
                 <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-sm">
                   <Send className="w-5 h-5 text-primary" />
                 </div>
@@ -65,17 +87,17 @@ const ContactSection = () => {
                   <p className="text-sm text-primary-foreground/50">E-mail</p>
                   <p className="font-semibold text-primary-foreground">contato@seicra.com.br</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
           {/* Right form */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
             {[
@@ -131,8 +153,8 @@ const ContactSection = () => {
 
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-10 py-4 text-base font-bold rounded-sm hover:bg-accent/90 transition-colors w-full justify-center md:w-auto"
             >
               Iniciar Análise Técnica

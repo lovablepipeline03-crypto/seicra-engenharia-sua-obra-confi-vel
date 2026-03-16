@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import GridLines from "@/components/GridLines";
 
 const testimonials = [
   {
@@ -22,15 +23,25 @@ const testimonials = [
   },
 ];
 
+const cardVariant = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] },
+  }),
+};
+
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="container">
+    <section className="section-padding bg-secondary/30 relative">
+      <GridLines />
+      <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Depoimentos</span>
@@ -43,11 +54,12 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={i}
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
               className="bg-card steel-border rounded-sm p-8 relative"
             >
               <Quote className="w-8 h-8 text-primary/10 absolute top-6 right-6" strokeWidth={2.5} />

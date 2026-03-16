@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Building2, Wrench, Zap, BrickWall, ShieldAlert, ClipboardCheck, ChevronRight } from "lucide-react";
+import GridLines from "@/components/GridLines";
 
 const services = [
   {
@@ -39,13 +40,15 @@ const ServicesSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section id="servicos" className="section-padding bg-secondary/50 blueprint-grid">
-      <div className="container">
+    <section id="servicos" className="section-padding bg-secondary/50 relative">
+      <GridLines />
+      <div className="absolute inset-0 blueprint-grid" />
+      <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Nossos Serviços</span>
@@ -54,7 +57,6 @@ const ServicesSection = () => {
           </h2>
         </motion.div>
 
-        {/* Engineering Drawers */}
         <div className="space-y-3">
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -62,13 +64,13 @@ const ServicesSection = () => {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setExpandedIndex(i)}
                 onMouseLeave={() => setExpandedIndex(null)}
-                className="group bg-card steel-border rounded-sm overflow-hidden cursor-pointer transition-all duration-500"
+                className="group bg-card steel-border rounded-sm overflow-hidden cursor-pointer"
                 style={{ transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)" }}
               >
                 <div className="flex items-center gap-6 px-6 md:px-10 py-6 md:py-8">
