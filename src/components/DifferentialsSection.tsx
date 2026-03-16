@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Users, Clock, HeadphonesIcon, Factory } from "lucide-react";
+import GridLines from "@/components/GridLines";
 
 const differentials = [
   { icon: ShieldCheck, title: "Responsabilidade Técnica", desc: "ART emitida para todas as obras. CREA ativo e em dia." },
@@ -9,15 +10,27 @@ const differentials = [
   { icon: Factory, title: "Experiência Comercial e Industrial", desc: "Obras em galpões, lojas, escritórios e plantas industriais." },
 ];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.12, ease },
+  }),
+};
+
 const DifferentialsSection = () => {
   return (
-    <section id="diferenciais" className="section-padding">
-      <div className="container">
+    <section id="diferenciais" className="section-padding relative">
+      <GridLines />
+      <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7, ease }}
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Por que a SEICRA</span>
@@ -32,12 +45,13 @@ const DifferentialsSection = () => {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                custom={i}
+                variants={cardVariant}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4, boxShadow: "var(--steel-shadow)" }}
-                className="bg-card steel-border rounded-sm p-8 transition-all duration-300"
+                whileHover={{ y: -6, boxShadow: "var(--steel-shadow)", transition: { duration: 0.3 } }}
+                className="bg-card steel-border rounded-sm p-8 transition-colors duration-300"
               >
                 <div className="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-sm mb-5">
                   <Icon className="w-7 h-7 text-primary" strokeWidth={2.5} />
