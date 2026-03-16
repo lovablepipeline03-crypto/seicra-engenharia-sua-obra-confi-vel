@@ -12,14 +12,16 @@ const serviceOptions = [
   "Outro",
 ];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 const fadeLeft = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
 };
 
 const fadeRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
 };
 
 const ContactSection = () => {
@@ -41,7 +43,6 @@ const ContactSection = () => {
     <section id="contato" className="section-padding bg-foreground text-primary-foreground relative overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left info */}
           <motion.div
             variants={fadeLeft}
             initial="hidden"
@@ -91,7 +92,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Right form */}
           <motion.form
             onSubmit={handleSubmit}
             variants={fadeRight}

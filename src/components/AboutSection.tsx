@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
@@ -7,12 +9,12 @@ const stagger = {
 
 const fadeLeft = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
 };
 
 const fadeRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
 };
 
 const AboutSection = () => {

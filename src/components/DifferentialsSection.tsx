@@ -10,12 +10,14 @@ const differentials = [
   { icon: Factory, title: "Experiência Comercial e Industrial", desc: "Obras em galpões, lojas, escritórios e plantas industriais." },
 ];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 const cardVariant = {
   hidden: { opacity: 0, y: 60 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.6, delay: i * 0.12, ease },
   }),
 };
 
@@ -28,7 +30,7 @@ const DifferentialsSection = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease }}
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Por que a SEICRA</span>
@@ -51,7 +53,7 @@ const DifferentialsSection = () => {
                 whileHover={{ y: -6, boxShadow: "var(--steel-shadow)", transition: { duration: 0.3 } }}
                 className="bg-card steel-border rounded-sm p-8 transition-colors duration-300"
               >
-                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-sm mb-5 group-hover:bg-primary transition-colors duration-300">
+                <div className="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-sm mb-5">
                   <Icon className="w-7 h-7 text-primary" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>

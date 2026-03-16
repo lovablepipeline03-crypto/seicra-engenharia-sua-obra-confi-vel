@@ -23,12 +23,14 @@ const testimonials = [
   },
 ];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 const cardVariant = {
   hidden: { opacity: 0, y: 60 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.7, delay: i * 0.15, ease },
   }),
 };
 
@@ -41,7 +43,7 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease }}
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">Depoimentos</span>
