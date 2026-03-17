@@ -199,7 +199,11 @@ const ProjectsSection = () => {
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className={`group relative overflow-hidden rounded-sm cursor-pointer ${p.className}`}
             >
-              <ProjectCarousel images={p.images} alt={p.title} />
+              {p.video ? (
+                <ProjectVideo src={p.video} />
+              ) : (
+                <ProjectCarousel images={p.images!} alt={p.title} />
+              )}
               {/* Blueprint overlay on hover */}
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/70 transition-all duration-500 flex items-end pointer-events-none">
                 <div className="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500" style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}>
