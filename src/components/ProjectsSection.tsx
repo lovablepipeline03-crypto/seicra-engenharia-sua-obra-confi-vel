@@ -35,7 +35,6 @@ import p3d_3 from "@/assets/projects/p3d/3.jpeg";
 import p3d_4 from "@/assets/projects/p3d/4.jpeg";
 import p3d_5 from "@/assets/projects/p3d/5.jpeg";
 
-import project1 from "@/assets/project-1.jpg";
 
 interface Project {
   images: string[];
