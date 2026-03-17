@@ -35,10 +35,10 @@ import p3d_3 from "@/assets/projects/p3d/3.jpeg";
 import p3d_4 from "@/assets/projects/p3d/4.jpeg";
 import p3d_5 from "@/assets/projects/p3d/5.jpeg";
 
-import project1 from "@/assets/project-1.jpg";
 
 interface Project {
-  images: string[];
+  images?: string[];
+  video?: string;
   title: string;
   location: string;
   className: string;
@@ -46,7 +46,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    images: [project1],
+    video: "/videos/video_1.mp4",
     title: "Edifício Comercial",
     location: "Campinas – SP",
     className: "md:col-span-2 md:row-span-2",
@@ -77,14 +77,40 @@ const projects: Project[] = [
   },
 ];
 
+const ProjectVideo = ({ src }: { src: string }) => {
+  return (
+    <div className="w-full h-full overflow-hidden relative bg-black flex items-center justify-center">
+      <video
+        src={src}
+        muted
+        playsInline
+        controls
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
+};
+
+const AUTO_SLIDE_INTERVAL = 4000;
+
 const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
+  // Auto-slide
+  useEffect(() => {
+    if (images.length <= 1 || isHovered) return;
+    const timer = setInterval(() => {
+      setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    }, AUTO_SLIDE_INTERVAL);
+    return () => clearInterval(timer);
+  }, [images.length, isHovered]);
 
   const prev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -99,7 +125,7 @@ const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => 
   const hasMultiple = images.length > 1;
 
   return (
-    <div ref={ref} className="w-full h-full overflow-hidden relative">
+    <div ref={ref} className="w-full h-full overflow-hidden relative" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <motion.img
         key={current}
         src={images[current]}
@@ -173,7 +199,11 @@ const ProjectsSection = () => {
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className={`group relative overflow-hidden rounded-sm cursor-pointer ${p.className}`}
             >
-              <ProjectCarousel images={p.images} alt={p.title} />
+              {p.video ? (
+                <ProjectVideo src={p.video} />
+              ) : (
+                <ProjectCarousel images={p.images!} alt={p.title} />
+              )}
               {/* Blueprint overlay on hover */}
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/70 transition-all duration-500 flex items-end pointer-events-none">
                 <div className="p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500" style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}>
