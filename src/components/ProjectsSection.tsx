@@ -91,7 +91,7 @@ const ProjectVideo = ({ src }: { src: string }) => {
   );
 };
 
-const AUTO_SLIDE_INTERVAL = 4000;
+
 
 const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
   const [current, setCurrent] = useState(0);
