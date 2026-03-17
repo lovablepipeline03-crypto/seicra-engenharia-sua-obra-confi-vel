@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import GridLines from "@/components/GridLines";
@@ -91,7 +91,7 @@ const ProjectVideo = ({ src }: { src: string }) => {
   );
 };
 
-const AUTO_SLIDE_INTERVAL = 4000;
+
 
 const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
   const [current, setCurrent] = useState(0);
@@ -103,14 +103,6 @@ const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => 
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
-  // Auto-slide
-  useEffect(() => {
-    if (images.length <= 1 || isHovered) return;
-    const timer = setInterval(() => {
-      setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
-    }, AUTO_SLIDE_INTERVAL);
-    return () => clearInterval(timer);
-  }, [images.length, isHovered]);
 
   const prev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
