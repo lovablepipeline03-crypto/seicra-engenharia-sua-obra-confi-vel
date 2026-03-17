@@ -125,7 +125,7 @@ const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => 
   const hasMultiple = images.length > 1;
 
   return (
-    <div ref={ref} className="w-full h-full overflow-hidden relative">
+    <div ref={ref} className="w-full h-full overflow-hidden relative" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <motion.img
         key={current}
         src={images[current]}
