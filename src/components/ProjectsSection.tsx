@@ -37,7 +37,8 @@ import p3d_5 from "@/assets/projects/p3d/5.jpeg";
 
 
 interface Project {
-  images: string[];
+  images?: string[];
+  video?: string;
   title: string;
   location: string;
   className: string;
@@ -45,7 +46,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    images: [project1],
+    video: "/videos/video_1.mp4",
     title: "Edifício Comercial",
     location: "Campinas – SP",
     className: "md:col-span-2 md:row-span-2",
@@ -76,14 +77,40 @@ const projects: Project[] = [
   },
 ];
 
+const ProjectVideo = ({ src }: { src: string }) => {
+  return (
+    <div className="w-full h-full overflow-hidden relative bg-black flex items-center justify-center">
+      <video
+        src={src}
+        muted
+        playsInline
+        controls
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
+};
+
+const AUTO_SLIDE_INTERVAL = 4000;
+
 const ProjectCarousel = ({ images, alt }: { images: string[]; alt: string }) => {
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
+  // Auto-slide
+  useEffect(() => {
+    if (images.length <= 1 || isHovered) return;
+    const timer = setInterval(() => {
+      setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+    }, AUTO_SLIDE_INTERVAL);
+    return () => clearInterval(timer);
+  }, [images.length, isHovered]);
 
   const prev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
