@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import pipelineLogo from "@/assets/pipeline-logo.png";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -82,6 +83,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-primary hover:text-primary-foreground transition-colors underline underline-offset-2"
             >
+              <img src={pipelineLogo} alt="Pipeline Consultoria Digital" className="inline-block w-5 h-5 mr-1 align-middle" />
               Pipeline Consultoria Digital
             </a>
           </p>
