@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import pipelineLogo from "@/assets/pipeline-logo.png";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
