@@ -71,9 +71,20 @@ const Footer = () => {
 
         <motion.div
           variants={fadeUp}
-          className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/30"
+          className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/30 space-y-2"
         >
-          © {new Date().getFullYear()} SEICRA Engenharia. Todos os direitos reservados.
+          <p>© {new Date().getFullYear()} SEICRA Engenharia. Todos os direitos reservados.</p>
+          <p>
+            Desenvolvido por{" "}
+            <a
+              href="https://www.instagram.com/pipeline.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary-foreground transition-colors underline underline-offset-2"
+            >
+              Pipeline Consultoria Digital
+            </a>
+          </p>
         </motion.div>
       </motion.div>
     </footer>
