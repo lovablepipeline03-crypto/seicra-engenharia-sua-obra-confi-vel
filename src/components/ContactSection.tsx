@@ -30,25 +30,25 @@ const ContactSection = () => {
           transition={{ duration: 0.7, delay: 0.2, ease }}
           className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8"
         >
-          <div className="flex items-center gap-4">
+          <a href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
             <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-sm">
               <Phone className="w-5 h-5 text-primary" />
             </div>
             <div>
               <p className="text-sm text-primary-foreground/50">Telefone / WhatsApp</p>
-              <p className="font-semibold text-primary-foreground">(19) 99999-9999</p>
+              <p className="font-semibold text-primary-foreground">(19) 98288-0865</p>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-4">
+          <a href="mailto:comercial@seicra.com.br" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
             <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-sm">
               <Send className="w-5 h-5 text-primary" />
             </div>
             <div>
               <p className="text-sm text-primary-foreground/50">E-mail</p>
-              <p className="font-semibold text-primary-foreground">contato@seicra.com.br</p>
+              <p className="font-semibold text-primary-foreground">comercial@seicra.com.br</p>
             </div>
-          </div>
+          </a>
         </motion.div>
 
         <motion.div
