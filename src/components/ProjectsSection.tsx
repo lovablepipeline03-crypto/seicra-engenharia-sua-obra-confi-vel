@@ -51,7 +51,7 @@ const projects: Project[] = [
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    images: [p2_1, p2_2, p2_3, p2_4, p2_5, p2_6, p2_7],
+    images: [p2_1, p2_2, p2_3, p2_4, p2_5, p2_6],
     title: "Reforma Residencial",
     location: "Valinhos – SP",
     className: "",
