@@ -12,14 +12,13 @@ import p1_5 from "@/assets/projects/p1/5.jpg";
 import p1_6 from "@/assets/projects/p1/6.jpg";
 import p1_7 from "@/assets/projects/p1/7.jpg";
 
-// Project 2 - drive images
-import p2_1 from "@/assets/projects/p2/1.jpg";
-import p2_2 from "@/assets/projects/p2/2.jpg";
-import p2_3 from "@/assets/projects/p2/3.jpg";
-import p2_4 from "@/assets/projects/p2/4.jpg";
-import p2_5 from "@/assets/projects/p2/5.jpg";
-import p2_6 from "@/assets/projects/p2/6.jpg";
-import p2_7 from "@/assets/projects/p2/7.jpg";
+// Project 2 - new images
+import p2_1 from "@/assets/projects/p2new/1.jpg";
+import p2_2 from "@/assets/projects/p2new/2.jpg";
+import p2_3 from "@/assets/projects/p2new/3.jpg";
+import p2_4 from "@/assets/projects/p2new/4.jpg";
+import p2_5 from "@/assets/projects/p2new/5.jpg";
+import p2_6 from "@/assets/projects/p2new/6.png";
 
 // Project 3 images
 import p3_1 from "@/assets/projects/p3/1.jpeg";
@@ -52,7 +51,7 @@ const projects: Project[] = [
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    images: [p2_1, p2_2, p2_3, p2_4, p2_5, p2_6, p2_7],
+    images: [p2_1, p2_2, p2_3, p2_4, p2_5, p2_6],
     title: "Reforma Residencial",
     location: "Valinhos – SP",
     className: "",
