@@ -48,7 +48,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contato"
+            href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold rounded-sm hover:bg-primary/90 transition-colors"
           >
             <Phone className="w-4 h-4" />
@@ -83,7 +85,9 @@ const Navbar = () => {
           ))}
           <div className="px-6 pt-2">
             <a
-              href="#contato"
+              href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold rounded-sm"
             >

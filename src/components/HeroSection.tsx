@@ -62,14 +62,16 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#contato"
+              href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-8 py-4 text-base font-bold rounded-sm animate-pulse-cta hover:bg-accent/90 transition-colors shadow-[var(--steel-shadow)]"
             >
               Solicitar Orçamento
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/5519999999999"
+              href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 text-base font-semibold rounded-sm steel-border hover:bg-muted transition-colors"
