@@ -59,7 +59,7 @@ const ContactSection = () => {
           className="mt-10 flex justify-center"
         >
           <motion.a
-            href="https://wa.me/5519999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}

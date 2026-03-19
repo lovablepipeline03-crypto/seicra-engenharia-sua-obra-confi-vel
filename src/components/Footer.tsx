@@ -39,11 +39,11 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-primary-foreground/60">
               <a href="https://api.whatsapp.com/send/?phone=%2B5519982880865&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary-foreground transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>(19) 99999-9999</span>
+                <span>(19) 98288-0865</span>
               </a>
-              <div className="flex items-center gap-3">
+              <a href="mailto:comercial@seicra.com.br" className="flex items-center gap-3 hover:text-primary-foreground transition-colors">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>contato@seicra.com.br</span>
+                <span>comercial@seicra.com.br</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
