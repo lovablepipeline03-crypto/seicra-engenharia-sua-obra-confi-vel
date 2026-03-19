@@ -54,7 +54,7 @@ const projects: Project[] = [
   },
   {
     images: [p2_1, p2_2, p2_3, p2_4, p2_5, p2_6, p2_7],
-    title: "Edifício Comercial",
+    title: "Reforma Residencial",
     location: "",
     className: "",
   },
