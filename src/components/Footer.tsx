@@ -44,7 +44,7 @@ const Footer = () => {
               <a href="mailto:comercial@seicra.com.br" className="flex items-center gap-3 hover:text-primary-foreground transition-colors">
                 <Mail className="w-4 h-4 text-primary" />
                 <span>comercial@seicra.com.br</span>
-              </div>
+              </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
                 <span>Campinas – SP</span>
