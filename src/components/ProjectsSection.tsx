@@ -29,11 +29,12 @@ import p3_4 from "@/assets/projects/p3/4.jpeg";
 import p3_5 from "@/assets/projects/p3/5.jpeg";
 
 // Project 3 - drive images
-import p3d_1 from "@/assets/projects/p3d/1.jpeg";
-import p3d_2 from "@/assets/projects/p3d/2.jpeg";
-import p3d_3 from "@/assets/projects/p3d/3.jpeg";
-import p3d_4 from "@/assets/projects/p3d/4.jpeg";
-import p3d_5 from "@/assets/projects/p3d/5.jpeg";
+import p3d_1 from "@/assets/projects/p3d/1.jpg";
+import p3d_2 from "@/assets/projects/p3d/2.jpg";
+import p3d_3 from "@/assets/projects/p3d/3.jpg";
+import p3d_4 from "@/assets/projects/p3d/4.jpg";
+import p3d_5 from "@/assets/projects/p3d/5.jpg";
+import p3d_6 from "@/assets/projects/p3d/6.png";
 
 
 interface Project {
@@ -70,7 +71,7 @@ const projects: Project[] = [
     className: "md:col-span-2",
   },
   {
-    images: [p3d_1, p3d_2, p3d_3, p3d_4, p3d_5],
+    images: [p3d_1, p3d_2, p3d_3, p3d_4, p3d_5, p3d_6],
     title: "Estrutura em Concreto",
     location: "Hortolândia – SP",
     className: "",
