@@ -71,7 +71,7 @@ const projects: Project[] = [
     className: "md:col-span-2",
   },
   {
-    images: [p3d_1, p3d_2, p3d_3, p3d_4, p3d_5],
+    images: [p3d_1, p3d_2, p3d_3, p3d_4, p3d_5, p3d_6],
     title: "Estrutura em Concreto",
     location: "Hortolândia – SP",
     className: "",
