@@ -91,7 +91,7 @@ const Hero = () => {
             <span className="tabular font-semibold text-foreground">+200</span>
             <span>obras entregues</span>
             <span className="w-px h-4 bg-border" />
-            <span className="tabular font-semibold text-foreground">15+</span>
+            <span className="tabular font-semibold text-foreground">30+</span>
             <span>anos de experiência</span>
           </motion.div>
         </motion.div>

@@ -61,7 +61,7 @@ const AboutSection = () => {
           >
             {[
               { num: "+200", label: "Obras entregues" },
-              { num: "15+", label: "Anos de experiência" },
+              { num: "30+", label: "Anos de experiência" },
               { num: "100%", label: "Obras com ART" },
               { num: "98%", label: "Clientes satisfeitos" },
             ].map((stat, i) => (
