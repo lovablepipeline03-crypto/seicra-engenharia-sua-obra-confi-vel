@@ -51,7 +51,7 @@ const Hero = () => {
             className="text-lg text-muted-foreground max-w-lg leading-relaxed"
           >
             De reformas industriais a projetos estruturais em Campinas. 
-            A SEICRA entrega o que o papel planejou — com rigor técnico, 
+            A SEICRA entrega o que o papel planejou, com rigor técnico, 
             normas ABNT e zero desperdício.
           </motion.p>
 
