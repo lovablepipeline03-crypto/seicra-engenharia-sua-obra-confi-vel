@@ -55,9 +55,7 @@ const Footer = () => {
           <motion.div variants={fadeUp} className="space-y-4">
             <h4 className="font-display font-bold text-sm tracking-widest uppercase text-primary-foreground/70">Institucional</h4>
             <div className="space-y-2 text-sm text-primary-foreground/60">
-              <p>CNPJ: 00.000.000/0001-00</p>
-              <p>CREA-SP: 0000000000</p>
-              <p className="pt-2">
+              <p>
                 <a href="#servicos" className="nav-link hover:text-primary-foreground transition-colors">Serviços</a>
               </p>
               <p>
