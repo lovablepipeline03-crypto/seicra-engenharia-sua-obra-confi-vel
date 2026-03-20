@@ -41,7 +41,7 @@ const AboutSection = () => {
               </p>
               <p>
                 Com uma equipe técnica qualificada e compromisso com normas ABNT, entregamos 
-                projetos com transparência, cumprimento de prazos e rigor estrutural — do 
+                projetos com transparência, cumprimento de prazos e rigor estrutural, do 
                 diagnóstico à entrega final.
               </p>
               <p>
