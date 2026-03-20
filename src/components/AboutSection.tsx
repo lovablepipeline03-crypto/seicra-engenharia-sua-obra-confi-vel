@@ -63,7 +63,7 @@ const AboutSection = () => {
               { num: "+200", label: "Obras entregues" },
               { num: "30+", label: "Anos de experiência" },
               { num: "100%", label: "Obras com ART" },
-              { num: "5🌟", label: "Clientes satisfeitos" },
+              { num: "5⭐", label: "Clientes satisfeitos" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
