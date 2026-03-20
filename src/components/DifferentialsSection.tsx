@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, Clock, HeadphonesIcon, Factory } from "lucide-react";
+import { ShieldCheck, Users, Clock, HeadphonesIcon, Factory, Leaf } from "lucide-react";
 import GridLines from "@/components/GridLines";
 
 const differentials = [
@@ -8,6 +8,7 @@ const differentials = [
   { icon: Clock, title: "Cumprimento de Prazos", desc: "Gestão de cronograma com indicadores e entregas mensuráveis." },
   { icon: HeadphonesIcon, title: "Atendimento Personalizado", desc: "Engenheiro responsável dedicado do orçamento à entrega." },
   { icon: Factory, title: "Experiência Comercial e Industrial", desc: "Obras em galpões, lojas, escritórios e plantas industriais." },
+  { icon: Leaf, title: "Sustentabilidade", desc: "Práticas sustentáveis e redução de desperdício em todos os projetos." },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;
