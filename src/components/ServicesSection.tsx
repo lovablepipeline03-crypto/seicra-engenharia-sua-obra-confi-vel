@@ -17,7 +17,7 @@ const services = [
   {
     icon: Zap,
     title: "Instalações Elétricas e Hidráulicas",
-    description: "Projetos e execução de instalações completas seguindo NBR 5410 e NBR 5626 com responsabilidade técnica.",
+    description: "Projetos e execução de instalações completas seguindo as normas técnicas vigentes, com responsabilidade técnica.",
   },
   {
     icon: BrickWall,
